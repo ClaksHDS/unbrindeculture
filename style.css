@@ -1,0 +1,129 @@
+*,
+*::before,
+*::after
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(252,252,252);
+    color: rgb(26, 24, 24);
+}
+
+h1, h2, h3, h4{
+    font-Family: 'Roboto', Sans-Serif;
+}
+
+p{
+    font-Family: 'Lora', Serif;
+    font-Size: 14px;
+}
+
+
+
+/* Hero avec entrée en animation */
+.presentation{
+    font-size: 20px;
+    text-align: center;
+}
+
+.presentation::before{
+    content: 'Bienvenue dans';
+    font-size: 18px;
+    background-color: rgb(55, 82, 73);
+    color: aliceblue;
+}
+
+.citation{
+    font-style: italic;
+}
+.citation::before{
+    content: open-quote;
+}
+.citation::after{
+    content: close-quote;
+
+}
+.presentation::after{
+    content: 'Votre allié';
+    font-size: 18px;
+    background-color: rgb(56, 165, 129);
+    color: rgb(26, 24, 24);
+    display: block;
+}
+
+/*animation Totoro en CSS*/
+:root{
+    --ear-width: 20px;
+    --ear-height: 30px;
+}
+.totoro{
+    position: relative;
+    margin: auto;
+    display: block;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 180px;
+    height: 180px;
+    background: pink;
+}
+
+.totoro-body{
+    position: absolute;
+    width: 115px;
+    height: 135px;
+    border-radius: 50%;
+    background: rgb(115, 113,96);
+    bottom: 0;
+    right: 3px;
+    left: 3px;
+}
+
+.totoro-head{
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgb(115, 113,96);
+    left: 15%; 
+}
+/*Left ear*/
+.totoro-head::before{
+    content: "";
+    position: absolute;
+    width: var(--ear-width);
+    height: var(--ear-height);
+    border-radius: 50%;
+    top: -5px;
+    left: 5px;
+}
+
+/*Right ear*/
+
+.totoro-head::after{
+    content: "";
+    position: absolute;
+    width: var(--ear-width);
+    height: var(--ear-height);
+    border-radius: 50%;
+    top: -5px;
+    right: 5px;
+}
+
+/* Construire un grid pour agencer les différents articles */
+.grid-container{
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+
+
+.card{
+    background-color: rgb(231, 211, 206);
+    border-radius: 8px;
+    border: 1.5px rgb(37, 126, 98) solid;
+}
