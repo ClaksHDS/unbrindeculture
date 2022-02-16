@@ -31,7 +31,7 @@ li, a{
 header{
     display: flex;
     width: auto;
-    box-shadow: 0 0.4rem 0.4rem 0.9rem rgba(236, 137, 137, 0.09);
+    box-shadow: 0 0.2rem 0.4rem 0.2rem rgba(236, 137, 137, 0.20);
     justify-content: space-between;
     align-items: center;
 }
@@ -47,7 +47,7 @@ li{
 }
 
 nav li a{
-    transition: all 0.5s ease 0s;
+    transition: all 0.250s ease 0s;
     color: rgb(26, 24, 24);
 }
 
@@ -65,40 +65,51 @@ li a:hover{
     width: 5rem; 
 }
 
-/* Hero avec entrée en animation */
+/* Hero */
 
 .hero-wrapper{
     padding: 4rem;
+    display: flex;
+    justify-content: center;
 }
 
 .message-container{
     margin: 0 auto;
     padding: 1rem 2rem;
 }
+
 .presentation{
-    margin: auto;
     text-align: center;
     font-size: 28px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     word-spacing: 0.5px;
     color: rgb(205, 58, 27);
+    display: inline-block;
+    transition: all 0.250s ease 0s;
+}
+
+.presentation:hover{
+    font-size: 38px;
 }
 
 .presentation::before{
-    content: '';
-    background-color: rgb(240, 178, 189);
-
+    content: 'Bienvenue sur';
+    background: rgb(240, 178, 189);
+    color: rgb(255,251,250);
+    width: 100%;
+    display: block;
+    transform: translateX(-20%);
 }
 
 .presentation::after{
-
-    content: '';
-    background-color: rgb(255,251,250);
-
+    content: "générateur d'idées.";
+    display: block;
+    font-size: 20px;  
+    transform: translateX(40%);  
 }
 
-/* Section citation*/
+/* Hero presentation */
 
 .citation{
     font-style: italic;
@@ -132,71 +143,85 @@ li a:hover{
     position: absolute;
 }
 
+/* Select articles section */
 
-/*animation Totoro en CSS
-:root{
-    --ear-width: 20px;
-    --ear-height: 30px;
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em 2em;
 }
-.totoro{
+
+.column{
+    flex: 100%;
+    max-width: 100%;
+}
+
+.column img{
+    vertical-align: middle;
+}
+
+.wrapper{
     position: relative;
-    margin: auto;
+    width: 100%;
+}
+
+.image{
     display: block;
-    margin-top: 4%;
-    margin-bottom: 4%;
-    width: 180px;
-    height: 180px;
-    background: pink;
+    width: 100%;
+    height: auto;
 }
 
-.totoro-body{
+.overlay{
     position: absolute;
-    width: 115px;
-    height: 135px;
-    border-radius: 50%;
-    background: rgb(115, 113,96);
+    top: 0;
+    right: 0;
     bottom: 0;
-    right: 3px;
-    left: 3px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.250ms ease;
+    background-color: rgb(240, 178, 189);
 }
 
-.totoro-head{
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: rgb(115, 113,96);
-    left: 15%; 
+.wrapper:hover .overlay{
+    opacity: 0.8;
 }
 
-.totoro-head::before{
-    content: "";
+.texte{
+    color: rgb(205, 58, 27);
+    font-size: 30px;
+    font-weight: 600;
     position: absolute;
-    width: var(--ear-width);
-    height: var(--ear-height);
-    border-radius: 50%;
-    top: -5px;
-    left: 5px;
+    margin-top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
 }
 
+/*Tablette*/
+@media only screen and (min-width: 480px){
+    .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
 
+/*Desktop*/
+@media only screen and (min-width: 1024px){
+    .column{
+        flex: 33%;
+        max-width: 33%;
+    }
+}
 
-.totoro-head::after{
-    content: "";
-    position: absolute;
-    width: var(--ear-width);
-    height: var(--ear-height);
-    border-radius: 50%;
-    top: -5px;
-    right: 5px;
-}*/
-
-/* Construire un grid pour agencer les différents articles */
+/* Grid pour agencer les différents articles */
 
 .grid-container{
     padding: 2.5rem;
     display: grid;
-    gap: 1.5rem;
+    gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
 
 }
@@ -206,6 +231,7 @@ li a:hover{
     border-radius: 4px;
     border: 0.5px rgb(68, 67, 64) solid;
     padding: 2rem 2rem;
+    transition: ease 250ms 0.2s;
 }
 
 .title{
@@ -217,4 +243,31 @@ li a:hover{
     font-size: 17px;
     font-style: oblique;
     font-weight: lighter;
+}
+
+/* Footer for all the pages */
+
+.footer-container{
+    display: flex;
+    box-shadow: -0.2rem -0.2rem 0.2rem 0.1rem rgba(236, 137, 137, 0.15);
+    justify-content: space-between;
+    align-items: center;
+    padding : 0.5rem 0.5rem;
+}
+
+/* hero for the sections*/
+
+.section-type{
+    display: flex;
+    justify-content: center;
+    padding: 2.5rem;
+    transition: all 0.250s ease 0s;
+}
+
+.section-type h2{
+    color: rgb(205, 58, 27);
+}
+
+.section-type:hover{
+    font-size: 30px;
 }
