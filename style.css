@@ -7,6 +7,9 @@
     padding: 0;
 }
 
+a{
+    color: rgb(26, 24, 24);
+}
 body{
     background-color: rgb(255,251,250);
     color: rgb(26, 24, 24);
@@ -80,7 +83,7 @@ li a:hover{
 
 .presentation{
     text-align: center;
-    font-size: 28px;
+    font-size: 38px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     word-spacing: 0.5px;
@@ -90,7 +93,7 @@ li a:hover{
 }
 
 .presentation:hover{
-    font-size: 38px;
+    font-size: 45px;
 }
 
 .presentation::before{
@@ -260,7 +263,7 @@ li a:hover{
 .section-type{
     display: flex;
     justify-content: center;
-    padding: 2.5rem;
+    padding-top: 2.5rem;
     transition: all 0.250s ease 0s;
 }
 
@@ -270,4 +273,40 @@ li a:hover{
 
 .section-type:hover{
     font-size: 30px;
+}
+
+/*About section */
+
+.profile-picture{
+    display: flex;
+    justify-content: center;
+    padding: 0 0;   
+}
+
+.profile{
+    -webkit-clip-path: circle(30% at 50% 50%);
+    clip-path: circle(30% at 50% 50%); 
+}
+
+/*Texte présentation */
+
+.bio-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+/* Section réseaux sociaux */
+
+.socialsmediawrapper h3{
+    color: rgb(205, 58, 27);
+    text-align: center;
+}
+
+.socialsmediawrapper{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }
