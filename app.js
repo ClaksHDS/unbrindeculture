@@ -2,14 +2,21 @@ let imagePosition = 0;
 const images = document.getElementsByClassName('carousel-item');
 const totalImages = images.length;
 
-document.getQuerySelector('.next-button').addEventListener('click', function () {
+const nextButton = document.querySelectorAll('.next-button');
+
+nextButton.forEach(next => {
+    next.addEventListener('click', function(){
         moveToNextImage();
-    });
+    })
+})
 
-document.getQuerySelector('.prev-button').addEventListener('click', function () {
+const prevButton = document.querySelectorAll('.prev-button');
+
+prevButton.forEach(prev =>{
+    prev.addEventListener('click', function(){
         moveToPrevImage();
-    });
-
+    })
+})
 
 function updateImagePosition() {
     for (let image of images) {
