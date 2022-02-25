@@ -253,31 +253,6 @@ li a:hover{
     font-weight: lighter;
 }
 
-/*Tablette*/
-@media only screen and (min-width: 480px){
-    .card{
-        grid-column-end: span 2;
-        max-width: 100%;
-    }
-    .carousel{
-        place-items: center;
-    }
-}
-
-/* Desktop */
-
-@media only screen and (min-width: 700px){
-    .grid-container{
-        display: grid;
-        gap: 2rem;
-        grid-template-columns: repeat(2,1fr);
-        width: 100%;
-        place-items: center;
-    }
-
-}
-
-
 /* Carousel indisde each card*/
 
 .carousel{
@@ -326,6 +301,31 @@ li a:hover{
     margin-right: 15px;
 }
 
+/*Tablette*/
+@media only screen and (min-width: 480px){
+    .card{
+        grid-column-end: span 2;
+        max-width: 100%;
+        place-items: center;
+    }
+    .carousel{
+        place-items: center;
+    }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 1000px){
+    .grid-container{
+        display: flex;
+        justify-content: center;
+    }
+    .grid-container.card{
+        width: 500px;
+    }
+
+}
+
 /* Footer for all the pages */
 
 footer{
@@ -341,6 +341,7 @@ footer{
     align-items: center;
     padding : 0.5rem 0.5rem;
 }
+
 
 /* hero for the sections*/
 
