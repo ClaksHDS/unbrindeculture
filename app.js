@@ -1,45 +1,22 @@
-let imagePosition = 0;
-const images = document.getElementsByClassName('carousel-item');
-const totalImages = images.length;
+const getElement = (selector) => {
+  const el = document.querySelector(selector)
+  if (el) return el
+  throw new Error(`Please check your classes : ${selector} does not exist`)
+}
 
-const nextButton = document.querySelectorAll('.next-button');
+const navToggle = getElement('.nav-toggle')
+const links = getElement('.links-container')
+const navBar = document.querySelector('#nav')
 
-nextButton.forEach(next => {
-    next.addEventListener('click', function(){
-        moveToNextImage();
-    })
+//add fixed class to navbar
+window.addEventListener('scroll', function () {
+  if (this.window.pageYOffset > 80) {
+    navBar.classList.add('navbar-fixed')
+  } else {
+    navBar.classList.remove('navbar-fixed')
+  }
 })
 
-const prevButton = document.querySelectorAll('.prev-button');
-
-prevButton.forEach(prev =>{
-    prev.addEventListener('click', function(){
-        moveToPrevImage();
-    })
+navToggle.addEventListener('click', function () {
+  links.classList.toggle('show-links')
 })
-
-function updateImagePosition() {
-    for (let image of images) {
-        image.classList.remove('carousel-item--visible');
-        image.classList.add('carousel-item--hidden');
-    }
-    images[imagePosition].classList.add('carousel-item--visible');
-}
-
-function moveToNextImage() {
-    if (imagePosition === totalImages -1) {
-        imagePosition = 0;
-    } else {
-        imagePosition++;
-    }
-    updateImagePosition();
-}
-
-function moveToPrevImage() {
-    if (imagePosition === 0) {
-        imagePosition = totalImages -1;
-    } else {
-        imagePosition--;
-    }
-    updateImagePosition();
-}

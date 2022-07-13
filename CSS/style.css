@@ -1,0 +1,242 @@
+/* Universal Styles */
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+/*Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Roboto+Serif:ital,wght@0,400;0,500;1,400&display=swap');
+html{
+    font-size: 100%;
+}
+/*CSS Variables*/
+:root{
+--primaryPink100:  #fcf0f2;   
+--primaryPink200 : #f9e0e5;   
+--primaryPink300 :#f6d1d7 ;    
+--primaryPink400 :  #f3c1ca;  
+--primaryPink500 : #f0b2bd;
+--primaryRed100: #f0c4bb;
+--primaryRed200:#e69d8d;
+--primaryRed300:#dc755f;
+--primaryRed400: #d76149;
+--primaryRed500: #cd3a1b;
+--primaryRed600: #b93418;
+--primaryRed700:#902913;
+--primaryRed800: #7b2310;
+
+--clr-grey-1: hsl(209, 61%, 16%);
+--clr-grey-2: hsl(211, 39%, 23%);
+--clr-grey-3: hsl(209, 34%, 30%);
+--clr-grey-4: hsl(209, 28%, 39%);
+--clr-grey-5: hsl(210, 22%, 49%);
+--clr-grey-6: hsl(209, 23%, 60%);
+--clr-grey-7: hsl(211, 27%, 70%);
+--clr-grey-8: hsl(210, 31%, 80%);
+--clr-grey-9: hsl(212, 33%, 89%);
+--clr-grey-10: hsl(210, 36%, 96%);
+
+--white: #fff;
+--black: #000;    
+--backgroundColor : #fffbfa;
+--textColor: var(--clr-grey-1);
+--maxWidth: 1120px;
+--fixedWidth: 600px;
+--transition: all 0.3s ease-in-out;
+--borderRadius: 0.35rem;
+--headingFont : 'Roboto Serif', serif;
+--bodyFont: 'Fira Code', monospace;   
+
+--shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+--shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+--shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+--shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+/*Global Styles */
+body{
+    background-color: var(--backgroundColor);
+    font-family: var(--bodyFont);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--textColor);
+}
+p{
+    max-width: 40em;
+}
+h1,h2, h3, h4, h5{
+    margin: 0;
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: capitalize;
+    font-family: var(--headingFont);
+}
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+h2 {
+  font-size: 2.441rem;
+}
+h3 {
+  font-size: 1.953rem;
+}
+h4 {
+  font-size: 1.563rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+img{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+/*
+=============== 
+Nav Bar
+===============
+*/
+.nav{
+    background: var(--primaryPink100);
+    box-shadow: var(--shadow-1);
+    line-height: 1;
+}
+.nav-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.nav-toggle{
+    background: transparent;
+    border-color: transparent;
+    color: var(--primaryRed600);
+    cursor: pointer;
+    font-size: 1.80rem;
+    transition: var(--transition);
+}
+.nav-toggle:hover{
+    transform: rotate(90deg);
+    color: var(--primaryRed300);
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-bottom: 0;
+}
+.links a{
+    color: var(--clr-grey-1);
+    text-transform: capitalize;
+    font-size: 1rem;
+    display: block;
+    padding: 0.55rem 1rem;
+}
+.links a:hover{
+    background: var(--primaryPink300);
+    padding-left: 1.75rem;
+    text-transform: uppercase;
+}
+.social-icons{
+    display: flex;
+    padding-bottom: 2rem;
+    justify-content: center;
+    gap: 0 1rem;
+}
+.social-icons a{
+    color: var(--primaryRed600);
+    font-size: 1.40rem;
+    transition: var(--transition);
+}
+.social-icons a:hover{
+    color: var(--primaryRed300);
+}
+.links-container{
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.show-links{
+    height: 11rem;
+}
+@media screen and (min-width: 800px) {
+    .nav-toggle{
+        display: none;
+    }
+    .nav-center{
+        max-width: var(--maxWidth);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem;
+    }
+    .nav-header{
+        padding: 0;
+    }
+    .links{
+        display: flex;
+        height: auto;
+    }
+    .links a{
+        padding: 0;
+        margin: 0 0.5rem;
+    }
+    .links a:hover{
+        background: none;
+        padding: 0;
+        color: var(--primaryRed600);
+        text-decoration: underline;
+    }
+    .social-icons{
+       padding: 0;
+    }
+}
+/*fixed navbar*/
+.navbar-fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primaryPink100);
+    z-index: 2;
+    box-shadow: var(--shadow-2);
+}
+/*
+=============== 
+Hero
+===============
+*/
+.hero{
+    min-height: 40vh;
+    display: grid;
+    place-items: center;
+}
+.banner-container{
+    position: relative;
+}
+.banner-container h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primaryRed500);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin: 0 auto;
+}
+
+/*
+=============== 
+Animation
+===============
+*/
