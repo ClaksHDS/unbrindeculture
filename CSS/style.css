@@ -386,7 +386,29 @@ Subjects section
         grid-template-columns: repeat(3,1fr);
     }
 }
-
+/*
+=============== 
+Footer
+===============
+*/
+.footer{
+  background: var(--primaryRed500);
+  text-align: center;
+}
+.footer-icons {
+  padding-top: 2rem;
+}
+.footer-icons a{
+  color: var(--white);
+  padding-left: 0.35rem;
+}
+.copyright{
+  text-transform: capitalize;
+  color: var(--white);
+  line-height: 1.5;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+}
 /*
 =============== 
 Animation

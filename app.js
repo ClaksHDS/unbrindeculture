@@ -20,3 +20,5 @@ window.addEventListener('scroll', function () {
 navToggle.addEventListener('click', function () {
   links.classList.toggle('show-links')
 })
+
+const date = (document.getElementById("date").innerHTML = new Date().getFullYear())
